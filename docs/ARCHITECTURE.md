@@ -3,32 +3,46 @@
 **Principle: the LLM interprets language; deterministic code decides what data is shown and what goes into a draft.** Every step is recorded in the response `trace`.
 
 ```mermaid
-flowchart LR
-    subgraph IN["Input"]
-      MIC["Browser mic (Web Speech API)"] -->|text| CHAT
-      AUD["Audio upload: wav, webm, m4a"] --> STT["STT provider: mock, faster-whisper or OpenAI, with dental vocabulary prompt"]
-      TXT["Typed text"] --> CHAT
-      STT -->|transcript| CHAT
+flowchart TD
+    subgraph INPUT["Input"]
+        MIC["Browser mic (Web Speech API)"]
+        AUD["Audio upload (wav, webm, m4a)"]
+        TXT["Typed text"]
+        STT["STT provider: mock, faster-whisper or OpenAI"]
     end
-    CHAT["POST /api/chat"] --> NORM["Normalise: O P G to OPG, four eight to 48"]
-    NORM --> INT{"Interpreter"}
-    INT -->|"LLM function calling, 7 tools (Gemini 3.8 Flash or Claude)"| INTENT["Intent: action + target"]
-    INT -->|"offline, or any LLM error"| RULES["Rules interpreter"] --> INTENT
-    INTENT --> RES
+    MIC -->|text| CHAT
+    TXT --> CHAT
+    AUD --> STT
+    STT -->|transcript| CHAT
+    CHAT["POST /api/chat"] --> NORM["Normalise text: O P G to OPG, four eight to 48"]
+    NORM --> INTERP{"Interpreter"}
+    INTERP -->|"LLM function calling (Gemini or Claude)"| INTENT["Intent: action and target"]
+    INTERP -->|"offline or LLM error"| RULES["Rules interpreter"]
+    RULES --> INTENT
     subgraph BRL["Business-rule layer (deterministic)"]
-      RES["Patient resolver: exact, ambiguous, fuzzy-confirm; clinic-scoped"] --> AUTHZ["AuthZ: role + clinic"]
-      AUTHZ --> SEL["Report selector: modality, latest, earliest, previous, date, session context"]
+        RES["Patient resolver: exact, ambiguous, fuzzy confirm"]
+        AUTHZ["AuthZ: role and clinic"]
+        SEL["Report selector and session context"]
     end
-    SEL --> ACT{"Action"}
-    ACT -->|open| RV["Report view + evidence"]
-    ACT -->|"summarize / ask"| GEN["LLM structured JSON, or extractive"] --> GC["Grounding check: cited IDs exist, numbers and terms in source, hedges kept"] --> ANS["Answer + source sentences"]
-    ACT -->|dictate| DX["Extractor: LLM JSON or rules"] --> VAL["Dictation validator: quote in transcript, condition stated, site re-derived, hedge and negation, modifiers"] --> DRAFT["Draft JSON + template text, pending clinician review"]
-    DRAFT --> EDIT["PUT edit, versioned"] --> APPROVE["Approve: blocked if sites unresolved"]
-    ACT -->|book| SLOTS["Diary search: free slots for modality and time window; scan type can come from the report recommendation"] --> CONF{"Clinician's own words = explicit yes?"}
-    CONF -->|yes| COMMIT["Re-check slot, book, audit"]
-    CONF -->|"no / unclear"| NOBOOK["Nothing booked"]
-    SESS[("Session: active patient and report, pending question")] <--> RES
+    INTENT --> RES
+    RES --> AUTHZ
+    AUTHZ --> SEL
+    SESS[("Session context")] --- RES
     AUTHZ --> AUDIT[("Audit log, IDs only")]
+    SEL --> ACT{"Action"}
+    ACT -->|open| RV["Report view and evidence"]
+    ACT -->|"summarize or ask"| GEN["LLM structured JSON, or extractive"]
+    GEN --> GC["Grounding check: cited IDs exist, numbers and terms in source, hedges kept"]
+    GC --> ANS["Answer and source sentences"]
+    ACT -->|dictate| DX["Extractor: LLM JSON or rules"]
+    DX --> VAL["Dictation validator: quote in transcript, condition stated, site re-derived"]
+    VAL --> DRAFT["Draft JSON and readable text, pending clinician review"]
+    DRAFT --> EDIT["Versioned edit"]
+    EDIT --> APPROVE["Approve: blocked while sites unresolved"]
+    ACT -->|book| SLOTS["Diary search: real free slots"]
+    SLOTS --> CONF{"Explicit yes from the clinician"}
+    CONF -->|yes| COMMIT["Re-check slot, book, audit"]
+    CONF -->|"no or unclear"| NOBOOK["Nothing booked"]
 ```
 
 ### 1. Voice and STT
