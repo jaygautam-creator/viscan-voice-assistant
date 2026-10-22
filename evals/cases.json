@@ -1,0 +1,518 @@
+[
+ {
+  "id": "retrieve-exact",
+  "turns": [
+   {
+    "say": "Open Priya Sharma's latest OPG report",
+    "expect": {
+     "status": "ok",
+     "report_id": "RPT-1001-02"
+    }
+   }
+  ]
+ },
+ {
+  "id": "retrieve-spoken-acronym",
+  "turns": [
+   {
+    "say": "pull up priya shah's o p g",
+    "expect": {
+     "status": "ok",
+     "report_id": "RPT-1002-01"
+    }
+   }
+  ]
+ },
+ {
+  "id": "retrieve-synonym-modality",
+  "turns": [
+   {
+    "say": "Show me Kavya Iyer's cephalogram",
+    "expect": {
+     "status": "ok",
+     "report_id": "RPT-1005-02"
+    }
+   }
+  ]
+ },
+ {
+  "id": "retrieve-panoramic-paraphrase",
+  "turns": [
+   {
+    "say": "Can you bring up the panoramic for Kavya?",
+    "expect": {
+     "status": "ok",
+     "report_id": "RPT-1005-01"
+    }
+   }
+  ]
+ },
+ {
+  "id": "retrieve-earliest",
+  "turns": [
+   {
+    "say": "Open Rahul Verma's first OPG",
+    "expect": {
+     "status": "ok",
+     "report_id": "RPT-1006-01"
+    }
+   }
+  ]
+ },
+ {
+  "id": "retrieve-by-date",
+  "turns": [
+   {
+    "say": "Open Rahul's OPG from March 2026",
+    "expect": {
+     "status": "ok",
+     "report_id": "RPT-1006-02"
+    }
+   }
+  ]
+ },
+ {
+  "id": "retrieve-no-apostrophe-stt",
+  "turns": [
+   {
+    "say": "Open Arjuns latest IOPA",
+    "expect": {
+     "status": "ok",
+     "report_id": "RPT-1004-02"
+    }
+   }
+  ]
+ },
+ {
+  "id": "missing-modality",
+  "turns": [
+   {
+    "say": "Open Arjun Mehta's latest CBCT",
+    "expect": {
+     "status": "not_found",
+     "report_id": null
+    }
+   }
+  ]
+ },
+ {
+  "id": "unknown-patient",
+  "turns": [
+   {
+    "say": "Open Zara Khan's latest OPG",
+    "expect": {
+     "status": "not_found",
+     "report_id": null
+    }
+   }
+  ]
+ },
+ {
+  "id": "other-clinic",
+  "turns": [
+   {
+    "say": "Open Priya Nair's OPG",
+    "expect": {
+     "status": "not_found",
+     "report_id": null
+    }
+   }
+  ]
+ },
+ {
+  "id": "ambiguous-first-name",
+  "turns": [
+   {
+    "say": "Open Priya's latest OPG report",
+    "expect": {
+     "status": "needs_clarification",
+     "report_id": null,
+     "candidates": [
+      "P-1001",
+      "P-1002"
+     ]
+    }
+   },
+   {
+    "say": "Priya Sharma",
+    "expect": {
+     "status": "ok",
+     "report_id": "RPT-1001-02"
+    }
+   }
+  ]
+ },
+ {
+  "id": "ambiguous-ordinal",
+  "turns": [
+   {
+    "say": "Open Priya's latest OPG report",
+    "expect": {
+     "status": "needs_clarification"
+    }
+   },
+   {
+    "say": "the first one",
+    "expect": {
+     "status": "ok",
+     "report_id": "RPT-1002-01"
+    }
+   }
+  ]
+ },
+ {
+  "id": "ambiguous-birth-year",
+  "turns": [
+   {
+    "say": "Pull up Priya's OPG",
+    "expect": {
+     "status": "needs_clarification"
+    }
+   },
+   {
+    "say": "the one born in 1990",
+    "expect": {
+     "status": "ok",
+     "report_id": "RPT-1001-02"
+    }
+   }
+  ]
+ },
+ {
+  "id": "ambiguous-surname",
+  "turns": [
+   {
+    "say": "Open Sharma's OPG",
+    "expect": {
+     "status": "needs_clarification",
+     "candidates": [
+      "P-1001",
+      "P-1003"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "fuzzy-confirm",
+  "turns": [
+   {
+    "say": "Open Pria Sharma's OPG",
+    "expect": {
+     "status": "needs_clarification",
+     "candidates": [
+      "P-1001"
+     ]
+    }
+   },
+   {
+    "say": "yes",
+    "expect": {
+     "status": "ok",
+     "report_id": "RPT-1001-02"
+    }
+   }
+  ]
+ },
+ {
+  "id": "followup-summary",
+  "turns": [
+   {
+    "say": "Open Priya Sharma's latest OPG",
+    "expect": {
+     "status": "ok",
+     "report_id": "RPT-1001-02"
+    }
+   },
+   {
+    "say": "Summarize her report",
+    "expect": {
+     "status": "ok",
+     "action": "summarize_report",
+     "report_id": "RPT-1001-02",
+     "has_sources": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "followup-summary-paraphrase",
+  "turns": [
+   {
+    "say": "Open Priya Sharma's latest OPG",
+    "expect": {
+     "status": "ok"
+    }
+   },
+   {
+    "say": "Give me the gist of it",
+    "expect": {
+     "status": "ok",
+     "action": "summarize_report",
+     "report_id": "RPT-1001-02"
+    }
+   }
+  ]
+ },
+ {
+  "id": "followup-other-modality",
+  "turns": [
+   {
+    "say": "Open Priya Sharma's latest OPG",
+    "expect": {
+     "status": "ok"
+    }
+   },
+   {
+    "say": "Now show me her CBCT",
+    "expect": {
+     "status": "ok",
+     "report_id": "RPT-1001-03"
+    }
+   }
+  ]
+ },
+ {
+  "id": "followup-no-context",
+  "turns": [
+   {
+    "say": "Summarize her report",
+    "expect": {
+     "status": "needs_clarification"
+    }
+   }
+  ]
+ },
+ {
+  "id": "followup-pronoun-mismatch",
+  "turns": [
+   {
+    "say": "Open Arjun Mehta's latest OPG",
+    "expect": {
+     "status": "ok"
+    }
+   },
+   {
+    "say": "Summarize her report",
+    "expect": {
+     "status": "needs_clarification"
+    }
+   }
+  ]
+ },
+ {
+  "id": "qa-nerve",
+  "turns": [
+   {
+    "say": "Open Priya Sharma's latest OPG",
+    "expect": {
+     "status": "ok"
+    }
+   },
+   {
+    "say": "Is the wisdom tooth close to the nerve?",
+    "expect": {
+     "status": "ok",
+     "action": "ask_report",
+     "cites": [
+      "F2"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "qa-not-in-report",
+  "turns": [
+   {
+    "say": "Open Priya Sharma's latest OPG",
+    "expect": {
+     "status": "ok"
+    }
+   },
+   {
+    "say": "Is there a root fracture?",
+    "expect": {
+     "status": "ok",
+     "action": "ask_report",
+     "answerable": false
+    }
+   }
+  ]
+ },
+ {
+  "id": "qa-paraphrase",
+  "turns": [
+   {
+    "say": "Open Rahul Verma's latest OPG",
+    "expect": {
+     "status": "ok"
+    }
+   },
+   {
+    "say": "How bad is his gum disease?",
+    "expect": {
+     "status": "ok",
+     "action": "ask_report",
+     "cites": [
+      "F1"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "dictation-example",
+  "turns": [
+   {
+    "say": "Lower right third molar is horizontally impacted",
+    "expect": {
+     "status": "ok",
+     "action": "dictate",
+     "draft_teeth": [
+      "48"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "dictation-multi",
+  "turns": [
+   {
+    "say": "Possible periapical radiolucency on tooth three six and deep distal caries on 47",
+    "expect": {
+     "status": "ok",
+     "action": "dictate",
+     "draft_teeth": [
+      "36",
+      "47"
+     ],
+     "uncertain_teeth": [
+      "36"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "dictation-colloquial",
+  "turns": [
+   {
+    "say": "The upper left eight is partially erupted",
+    "expect": {
+     "status": "ok",
+     "action": "dictate",
+     "draft_teeth": [
+      "28"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "unsupported-booking",
+  "turns": [
+   {
+    "say": "Book Priya Sharma for a cleaning on Friday",
+    "expect": {
+     "action": "unsupported"
+    }
+   }
+  ]
+ },
+ {
+  "id": "booking-confirmed",
+  "turns": [
+   {
+    "say": "Book a CBCT for Priya Sharma tomorrow morning",
+    "expect": {
+     "action": "book_scan",
+     "status": "needs_clarification",
+     "has_slots": true,
+     "slot_modality": "CBCT"
+    }
+   },
+   {
+    "say": "the first one",
+    "expect": {
+     "status": "needs_confirmation",
+     "booked": false
+    }
+   },
+   {
+    "say": "yes",
+    "expect": {
+     "status": "ok",
+     "booked": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "booking-declined",
+  "turns": [
+   {
+    "say": "Schedule an OPG for Arjun Mehta on Monday",
+    "expect": {
+     "action": "book_scan",
+     "has_slots": true,
+     "slot_modality": "OPG"
+    }
+   },
+   {
+    "say": "the second one",
+    "expect": {
+     "status": "needs_confirmation",
+     "booked": false
+    }
+   },
+   {
+    "say": "no, leave it",
+    "expect": {
+     "booked": false
+    }
+   }
+  ]
+ },
+ {
+  "id": "booking-recommended-scan",
+  "turns": [
+   {
+    "say": "Open Priya Sharma's latest OPG",
+    "expect": {
+     "status": "ok"
+    }
+   },
+   {
+    "say": "Book the scan recommended in her report",
+    "expect": {
+     "action": "book_scan",
+     "slot_modality": "CBCT",
+     "cites": [
+      "R1"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "booking-ask-scan-type",
+  "turns": [
+   {
+    "say": "Book a scan for Arjun Mehta tomorrow",
+    "expect": {
+     "status": "needs_clarification",
+     "has_slots": false
+    }
+   },
+   {
+    "say": "IOPA please",
+    "expect": {
+     "has_slots": true,
+     "slot_modality": "IOPA"
+    }
+   }
+  ]
+ }
+]

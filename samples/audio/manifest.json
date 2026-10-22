@@ -1,0 +1,32 @@
+[
+  {
+    "file": "01_open_priya_opg.wav",
+    "sha256": "26f256ef43965cf9c7a6e67cc47bbd68c323f6031e7e19028da4905d01703fad",
+    "transcript": "Open Priya's latest OPG report."
+  },
+  {
+    "file": "02_choose_priya_sharma.wav",
+    "sha256": "f7b9564199ec9e870c3851ee26106aaa9834c8cd0b286fbbc6ff05b563f18ab9",
+    "transcript": "Priya Sharma."
+  },
+  {
+    "file": "03_summarize_her_report.wav",
+    "sha256": "5f42b036ce4fc73c21d7079499076d14d0307f1892969c22311cb923f5fc263d",
+    "transcript": "Summarize her report."
+  },
+  {
+    "file": "04_question_nerve.wav",
+    "sha256": "364427f22ef470c3454f2e3b870e1ab4da47cc3c4b81eae0a4b6c65f33cdc273",
+    "transcript": "Is the wisdom tooth close to the nerve?"
+  },
+  {
+    "file": "05_dictation_single.wav",
+    "sha256": "bad7d88b3034986098426477782e0595b19dc9aeb11bceb89215dfbad89014f3",
+    "transcript": "Lower right third molar is horizontally impacted."
+  },
+  {
+    "file": "06_dictation_multi.wav",
+    "sha256": "493eb88a81abc7857e08e5a85cdaf248d6f98e4bb196a6114067e29968dccda2",
+    "transcript": "Lower right third molar is horizontally impacted and close to the mandibular canal. Possible periapical radiolucency on tooth three six. No caries on forty seven."
+  }
+]

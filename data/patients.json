@@ -1,0 +1,58 @@
+[
+  {
+    "patient_id": "P-1001",
+    "first_name": "Priya",
+    "last_name": "Sharma",
+    "sex": "F",
+    "date_of_birth": "1990-04-12",
+    "clinic_id": "CLN-BLR-01"
+  },
+  {
+    "patient_id": "P-1002",
+    "first_name": "Priya",
+    "last_name": "Shah",
+    "sex": "F",
+    "date_of_birth": "1985-11-03",
+    "clinic_id": "CLN-BLR-01"
+  },
+  {
+    "patient_id": "P-1003",
+    "first_name": "Riya",
+    "last_name": "Sharma",
+    "sex": "F",
+    "date_of_birth": "2001-07-22",
+    "clinic_id": "CLN-BLR-01"
+  },
+  {
+    "patient_id": "P-1004",
+    "first_name": "Arjun",
+    "last_name": "Mehta",
+    "sex": "M",
+    "date_of_birth": "1978-02-14",
+    "clinic_id": "CLN-BLR-01"
+  },
+  {
+    "patient_id": "P-1005",
+    "first_name": "Kavya",
+    "last_name": "Iyer",
+    "sex": "F",
+    "date_of_birth": "2009-09-30",
+    "clinic_id": "CLN-BLR-01"
+  },
+  {
+    "patient_id": "P-1006",
+    "first_name": "Rahul",
+    "last_name": "Verma",
+    "sex": "M",
+    "date_of_birth": "1969-12-01",
+    "clinic_id": "CLN-BLR-01"
+  },
+  {
+    "patient_id": "P-2001",
+    "first_name": "Priya",
+    "last_name": "Nair",
+    "sex": "F",
+    "date_of_birth": "1993-06-18",
+    "clinic_id": "CLN-MUM-02"
+  }
+]

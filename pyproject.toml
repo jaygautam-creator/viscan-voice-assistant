@@ -1,0 +1,46 @@
+[project]
+name = "viscan-voice-assistant"
+version = "0.1.0"
+description = "Proof of concept: voice-first dental assistant for report retrieval and clinical dictation (synthetic data only)."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=1.0",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "pydantic>=2.8",
+    "python-multipart>=0.0.9",
+    "rapidfuzz>=3.9",
+    "google-genai>=1.30",
+]
+
+[project.optional-dependencies]
+stt-local = ["faster-whisper>=1.0"]
+stt-openai = ["openai>=1.40"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "httpx>=0.27",
+    "ruff>=0.14",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-exclude = ["samples"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = ["E501", "B008", "SIM108"]  # long strings in prompts; FastAPI Depends defaults; ternaries stay explicit
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E402"]
+"scripts/*" = ["E402"]

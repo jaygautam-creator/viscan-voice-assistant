@@ -1,0 +1,14 @@
+{
+  "description": "Synthetic imaging schedule. Slots are generated for the next `days_ahead` days (clinic local time); a deterministic share are pre-booked to simulate a busy diary.",
+  "working_weekdays": [0, 1, 2, 3, 4, 5],
+  "sessions": [["09:00", "13:00"], ["14:00", "17:00"]],
+  "days_ahead": 14,
+  "prebooked_percent": 45,
+  "machines": [
+    {"machine_id": "BLR-PANO-1", "name": "Panoramic / Ceph unit", "clinic_id": "CLN-BLR-01", "modalities": ["OPG", "CEPH"], "slot_minutes": 20},
+    {"machine_id": "BLR-CBCT-1", "name": "CBCT scanner", "clinic_id": "CLN-BLR-01", "modalities": ["CBCT"], "slot_minutes": 30},
+    {"machine_id": "BLR-IO-1", "name": "Intraoral X-ray (Room 2)", "clinic_id": "CLN-BLR-01", "modalities": ["IOPA", "BITEWING"], "slot_minutes": 15},
+    {"machine_id": "MUM-PANO-1", "name": "Panoramic / Ceph unit", "clinic_id": "CLN-MUM-02", "modalities": ["OPG", "CEPH"], "slot_minutes": 20},
+    {"machine_id": "MUM-CBCT-1", "name": "CBCT scanner", "clinic_id": "CLN-MUM-02", "modalities": ["CBCT"], "slot_minutes": 30}
+  ]
+}

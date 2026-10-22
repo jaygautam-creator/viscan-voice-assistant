@@ -1,0 +1,20 @@
+[
+  {
+    "clinician_id": "dr-anand",
+    "display_name": "Dr. Meera Anand",
+    "role": "dentist",
+    "clinic_ids": ["CLN-BLR-01"]
+  },
+  {
+    "clinician_id": "dr-kapoor",
+    "display_name": "Dr. Vikram Kapoor",
+    "role": "radiologist",
+    "clinic_ids": ["CLN-MUM-02"]
+  },
+  {
+    "clinician_id": "front-desk-blr",
+    "display_name": "Reception (Bengaluru)",
+    "role": "receptionist",
+    "clinic_ids": ["CLN-BLR-01"]
+  }
+]

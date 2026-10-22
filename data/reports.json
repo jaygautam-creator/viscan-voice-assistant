@@ -1,0 +1,323 @@
+[
+  {
+    "report_id": "RPT-1001-01",
+    "patient_id": "P-1001",
+    "modality": "OPG",
+    "study_date": "2025-03-10",
+    "status": "final",
+    "reported_by": "Dr. S. Rao (Oral Radiologist)",
+    "clinical_indication": "Routine check-up; intermittent pain in the lower right posterior region.",
+    "findings": [
+      {"id": "F1", "text": "Tooth 48 is impacted; angulation is difficult to assess due to superimposition."},
+      {"id": "F2", "text": "Occlusal caries is noted on 36."},
+      {"id": "F3", "text": "No periapical pathology is evident."},
+      {"id": "F4", "text": "Alveolar bone levels are within normal limits."}
+    ],
+    "impression": [
+      {"id": "I1", "text": "Impacted 48."},
+      {"id": "I2", "text": "Occlusal caries on 36."}
+    ],
+    "recommendations": [
+      {"id": "R1", "text": "Restoration of 36 advised."}
+    ]
+  },
+  {
+    "report_id": "RPT-1001-02",
+    "patient_id": "P-1001",
+    "modality": "OPG",
+    "study_date": "2026-09-18",
+    "status": "final",
+    "reported_by": "Dr. S. Rao (Oral Radiologist)",
+    "clinical_indication": "Pain and swelling in the lower right posterior region.",
+    "findings": [
+      {"id": "F1", "text": "Tooth 48 is horizontally impacted with its crown abutting the distal surface of 47."},
+      {"id": "F2", "text": "The roots of 48 are in close proximity to the inferior alveolar canal."},
+      {"id": "F3", "text": "Deep distal caries is noted on 47, approaching the pulp."},
+      {"id": "F4", "text": "A periapical radiolucency measuring approximately 4 mm is seen at the mesial root apex of 36."},
+      {"id": "F5", "text": "Generalised mild horizontal alveolar bone loss is noted."},
+      {"id": "F6", "text": "Both condyles appear normal in shape and position."},
+      {"id": "F7", "text": "The maxillary sinuses appear clear."}
+    ],
+    "impression": [
+      {"id": "I1", "text": "Horizontally impacted 48 in close relation to the inferior alveolar canal."},
+      {"id": "I2", "text": "Deep distal caries on 47; pulpal involvement cannot be excluded."},
+      {"id": "I3", "text": "Periapical lesion associated with 36, suggestive of chronic apical periodontitis."}
+    ],
+    "recommendations": [
+      {"id": "R1", "text": "CBCT of the right posterior mandible advised prior to surgical removal of 48."},
+      {"id": "R2", "text": "Clinical vitality testing of 36 and 47 recommended."}
+    ]
+  },
+  {
+    "report_id": "RPT-1001-03",
+    "patient_id": "P-1001",
+    "modality": "CBCT",
+    "study_date": "2026-09-25",
+    "status": "final",
+    "reported_by": "Dr. S. Rao (Oral Radiologist)",
+    "clinical_indication": "Pre-surgical assessment of 48.",
+    "findings": [
+      {"id": "F1", "text": "Limited field-of-view CBCT of the right posterior mandible was performed."},
+      {"id": "F2", "text": "Tooth 48 is horizontally impacted with the crown directed mesially against the distal root of 47."},
+      {"id": "F3", "text": "The roots of 48 are in direct contact with the superior cortex of the inferior alveolar canal, which courses lingual to the roots."},
+      {"id": "F4", "text": "Thinning of the canal cortex is noted at the point of contact."},
+      {"id": "F5", "text": "Mild external root resorption is noted on the distal root of 47."}
+    ],
+    "impression": [
+      {"id": "I1", "text": "Horizontally impacted 48 in direct contact with the inferior alveolar canal."},
+      {"id": "I2", "text": "Mild external root resorption of the distal root of 47."}
+    ],
+    "recommendations": [
+      {"id": "R1", "text": "Surgical planning should account for the risk of inferior alveolar nerve injury; coronectomy may be considered."}
+    ]
+  },
+  {
+    "report_id": "RPT-1002-01",
+    "patient_id": "P-1002",
+    "modality": "OPG",
+    "study_date": "2026-05-02",
+    "status": "final",
+    "reported_by": "Dr. S. Rao (Oral Radiologist)",
+    "clinical_indication": "Follow-up of root canal treated lower right molar.",
+    "findings": [
+      {"id": "F1", "text": "Teeth 18 and 28 are missing."},
+      {"id": "F2", "text": "A root canal treated 46 with a full-coverage crown is seen."},
+      {"id": "F3", "text": "A periapical radiolucency is noted at the mesial root apex of 46."},
+      {"id": "F4", "text": "Moderate horizontal bone loss is noted in the mandibular anterior region."},
+      {"id": "F5", "text": "Calculus deposits are seen on the lingual surfaces of the mandibular incisors."}
+    ],
+    "impression": [
+      {"id": "I1", "text": "Persistent periapical lesion on root canal treated 46."},
+      {"id": "I2", "text": "Moderate horizontal bone loss in the mandibular anterior region."}
+    ],
+    "recommendations": [
+      {"id": "R1", "text": "Endodontic re-evaluation of 46 recommended."},
+      {"id": "R2", "text": "Periodontal assessment and scaling advised."}
+    ]
+  },
+  {
+    "report_id": "RPT-1002-02",
+    "patient_id": "P-1002",
+    "modality": "IOPA",
+    "study_date": "2026-08-14",
+    "status": "final",
+    "reported_by": "Dr. S. Rao (Oral Radiologist)",
+    "clinical_indication": "Review of periapical lesion on 46 after endodontic retreatment.",
+    "findings": [
+      {"id": "F1", "text": "Intraoral periapical radiograph of 46."},
+      {"id": "F2", "text": "The periapical radiolucency at the mesial root apex of 46 has reduced in size compared with the previous OPG."},
+      {"id": "F3", "text": "The root canal filling appears adequately condensed."}
+    ],
+    "impression": [
+      {"id": "I1", "text": "Healing periapical lesion on 46."}
+    ],
+    "recommendations": [
+      {"id": "R1", "text": "Review radiograph in six months."}
+    ]
+  },
+  {
+    "report_id": "RPT-1003-01",
+    "patient_id": "P-1003",
+    "modality": "BITEWING",
+    "study_date": "2026-01-20",
+    "status": "final",
+    "reported_by": "Dr. A. Menon (Oral Radiologist)",
+    "clinical_indication": "Food lodgement, upper right premolar region.",
+    "findings": [
+      {"id": "F1", "text": "Proximal caries is noted on the distal surface of 15 and the mesial surface of 16."},
+      {"id": "F2", "text": "Interproximal bone levels are within normal limits."}
+    ],
+    "impression": [
+      {"id": "I1", "text": "Proximal caries on 15 and 16."}
+    ],
+    "recommendations": [
+      {"id": "R1", "text": "Restorative treatment of 15 and 16 advised."}
+    ]
+  },
+  {
+    "report_id": "RPT-1003-02",
+    "patient_id": "P-1003",
+    "modality": "OPG",
+    "study_date": "2026-07-11",
+    "status": "final",
+    "reported_by": "Dr. A. Menon (Oral Radiologist)",
+    "clinical_indication": "Assessment of third molars.",
+    "findings": [
+      {"id": "F1", "text": "Teeth 38 and 48 are vertically impacted and partially erupted."},
+      {"id": "F2", "text": "Composite restorations are present on 15 and 16."},
+      {"id": "F3", "text": "No periapical pathology is evident."}
+    ],
+    "impression": [
+      {"id": "I1", "text": "Vertically impacted, partially erupted 38 and 48."}
+    ],
+    "recommendations": [
+      {"id": "R1", "text": "Monitor 38 and 48 for pericoronitis."}
+    ]
+  },
+  {
+    "report_id": "RPT-1004-01",
+    "patient_id": "P-1004",
+    "modality": "OPG",
+    "study_date": "2025-11-05",
+    "status": "final",
+    "reported_by": "Dr. A. Menon (Oral Radiologist)",
+    "clinical_indication": "Bleeding gums and loose lower teeth.",
+    "findings": [
+      {"id": "F1", "text": "Tooth 36 is missing."},
+      {"id": "F2", "text": "Mesial tipping of 37 into the edentulous space of 36 is noted."},
+      {"id": "F3", "text": "Generalised moderate horizontal bone loss is noted."},
+      {"id": "F4", "text": "Furcation involvement is seen on 46."}
+    ],
+    "impression": [
+      {"id": "I1", "text": "Missing 36 with mesial tipping of 37."},
+      {"id": "I2", "text": "Generalised moderate periodontal bone loss with furcation involvement of 46."}
+    ],
+    "recommendations": [
+      {"id": "R1", "text": "Periodontal evaluation recommended."},
+      {"id": "R2", "text": "Implant planning for the 36 region may be considered after periodontal stabilisation."}
+    ]
+  },
+  {
+    "report_id": "RPT-1004-02",
+    "patient_id": "P-1004",
+    "modality": "IOPA",
+    "study_date": "2026-02-17",
+    "status": "final",
+    "reported_by": "Dr. A. Menon (Oral Radiologist)",
+    "clinical_indication": "Mobility of lower right first molar.",
+    "findings": [
+      {"id": "F1", "text": "Intraoral periapical radiograph of 46."},
+      {"id": "F2", "text": "A grade II furcation radiolucency is seen on 46."},
+      {"id": "F3", "text": "Widening of the periodontal ligament space is noted around the mesial root of 46."}
+    ],
+    "impression": [
+      {"id": "I1", "text": "Furcation involvement and widened periodontal ligament space on 46."}
+    ],
+    "recommendations": [
+      {"id": "R1", "text": "Clinical probing and mobility assessment of 46 advised."}
+    ]
+  },
+  {
+    "report_id": "RPT-1005-01",
+    "patient_id": "P-1005",
+    "modality": "OPG",
+    "study_date": "2026-04-08",
+    "status": "final",
+    "reported_by": "Dr. S. Rao (Oral Radiologist)",
+    "clinical_indication": "Orthodontic assessment.",
+    "findings": [
+      {"id": "F1", "text": "Permanent dentition with developing third molars."},
+      {"id": "F2", "text": "Tooth 13 is palatally impacted."},
+      {"id": "F3", "text": "The deciduous canine 53 is retained."},
+      {"id": "F4", "text": "No periapical pathology is evident."}
+    ],
+    "impression": [
+      {"id": "I1", "text": "Palatally impacted 13 with retained 53."}
+    ],
+    "recommendations": [
+      {"id": "R1", "text": "CBCT advised to localise 13 before orthodontic treatment planning."}
+    ]
+  },
+  {
+    "report_id": "RPT-1005-02",
+    "patient_id": "P-1005",
+    "modality": "CEPH",
+    "study_date": "2026-04-08",
+    "status": "final",
+    "reported_by": "Dr. S. Rao (Oral Radiologist)",
+    "clinical_indication": "Orthodontic assessment.",
+    "findings": [
+      {"id": "F1", "text": "The lateral cephalogram shows a skeletal Class II pattern."},
+      {"id": "F2", "text": "Proclined maxillary incisors are noted."},
+      {"id": "F3", "text": "The airway appears adequate."}
+    ],
+    "impression": [
+      {"id": "I1", "text": "Skeletal Class II pattern with proclined maxillary incisors."}
+    ],
+    "recommendations": [
+      {"id": "R1", "text": "Orthodontic consultation advised."}
+    ]
+  },
+  {
+    "report_id": "RPT-1006-01",
+    "patient_id": "P-1006",
+    "modality": "OPG",
+    "study_date": "2024-06-01",
+    "status": "final",
+    "reported_by": "Dr. A. Menon (Oral Radiologist)",
+    "clinical_indication": "Routine periodontal review.",
+    "findings": [
+      {"id": "F1", "text": "Mild horizontal bone loss is noted in both arches."},
+      {"id": "F2", "text": "Amalgam restorations are present on 16, 26 and 36."}
+    ],
+    "impression": [
+      {"id": "I1", "text": "Mild generalised horizontal bone loss."}
+    ],
+    "recommendations": [
+      {"id": "R1", "text": "Routine periodontal maintenance advised."}
+    ]
+  },
+  {
+    "report_id": "RPT-1006-02",
+    "patient_id": "P-1006",
+    "modality": "OPG",
+    "study_date": "2026-03-15",
+    "status": "final",
+    "reported_by": "Dr. A. Menon (Oral Radiologist)",
+    "clinical_indication": "Periodontal review; patient reports loose lower front teeth.",
+    "findings": [
+      {"id": "F1", "text": "Generalised severe horizontal bone loss is noted, with vertical bone defects on the mesial aspects of 16 and 46."},
+      {"id": "F2", "text": "Teeth 31 and 41 are missing."},
+      {"id": "F3", "text": "Amalgam restorations are present on 16, 26 and 36."},
+      {"id": "F4", "text": "Subgingival calculus deposits are noted in the mandibular anterior region."}
+    ],
+    "impression": [
+      {"id": "I1", "text": "Progression from mild to severe generalised bone loss since the previous OPG."},
+      {"id": "I2", "text": "Vertical bone defects on 16 and 46."}
+    ],
+    "recommendations": [
+      {"id": "R1", "text": "Urgent periodontal referral advised."}
+    ]
+  },
+  {
+    "report_id": "RPT-2001-01",
+    "patient_id": "P-2001",
+    "modality": "OPG",
+    "study_date": "2026-08-01",
+    "status": "final",
+    "reported_by": "Dr. Vikram Kapoor (Oral Radiologist)",
+    "clinical_indication": "Trauma to upper front teeth.",
+    "findings": [
+      {"id": "F1", "text": "A fracture of the crown of 21 is noted, involving the incisal third."},
+      {"id": "F2", "text": "No root fracture is evident."},
+      {"id": "F3", "text": "Tooth 36 is missing."}
+    ],
+    "impression": [
+      {"id": "I1", "text": "Crown fracture of 21 without root involvement."},
+      {"id": "I2", "text": "Missing 36."}
+    ],
+    "recommendations": [
+      {"id": "R1", "text": "Restorative management of 21 advised."},
+      {"id": "R2", "text": "CBCT advised for implant planning in the 36 region."}
+    ]
+  },
+  {
+    "report_id": "RPT-2001-02",
+    "patient_id": "P-2001",
+    "modality": "CBCT",
+    "study_date": "2026-08-20",
+    "status": "final",
+    "reported_by": "Dr. Vikram Kapoor (Oral Radiologist)",
+    "clinical_indication": "Implant planning, 36 region.",
+    "findings": [
+      {"id": "F1", "text": "Residual ridge width in the 36 region is approximately 6 mm."},
+      {"id": "F2", "text": "Available bone height above the inferior alveolar canal is approximately 11 mm."}
+    ],
+    "impression": [
+      {"id": "I1", "text": "Adequate bone height for implant placement in the 36 region; ridge width is borderline."}
+    ],
+    "recommendations": [
+      {"id": "R1", "text": "Implant placement with possible ridge augmentation may be considered."}
+    ]
+  }
+]

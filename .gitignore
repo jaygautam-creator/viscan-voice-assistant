@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Local secrets & runtime output: never commit
+.env
+.env.*
+!.env.example
+logs/
+*.log
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+
+# Intermediate audio from the sample generator
+*.aiff

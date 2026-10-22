@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Viscan Voice Assistant</title>
+<meta name="description" content="Voice-first dental assistant: report retrieval, clinical dictation to draft, grounded follow-ups and scan booking. Synthetic data only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/app.css">
+<script>
+  try {
+    const t = localStorage.getItem("viscan-theme");
+    document.documentElement.dataset.theme = t || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  } catch (e) {}
+</script>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand-block">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c-2.2 0-4 1.8-4 4.4 0 2.2.9 3.6 1.5 5.2.6 1.7.8 3.7 1.3 5.6.4 1.7 1 3.3 2.1 3.3 1.5 0 1.6-2.6 2.1-4.6.3-1.2.9-2 2-2s1.7.8 2 2c.5 2 .6 4.6 2.1 4.6 1.1 0 1.7-1.6 2.1-3.3.5-1.9.7-3.9 1.3-5.6.6-1.6 1.5-3 1.5-5.2C21 4.8 19.2 3 17 3c-1.9 0-2.9 1-5 1S8.9 3 7 3z"/></svg>
+      </div>
+      <div>
+        <div class="brand-name">Viscan</div>
+        <div class="brand-sub">Clinical voice assistant</div>
+      </div>
+    </div>
+    <div class="context-pill" id="contextPill" title="Conversation context">No patient in context</div>
+    <button class="icon-btn" id="newBtn" title="New conversation"></button>
+    <div class="spacer"></div>
+    <div class="status-pill" id="enginePill" title=""><span class="dot" id="engineDot"></span><span class="label" id="engineLabel">Connecting…</span></div>
+    <button class="icon-btn" id="ttsBtn" title="Read replies aloud" aria-pressed="false"></button>
+    <button class="icon-btn" id="themeBtn" title="Toggle theme"></button>
+    <label class="user-switch" title="Signed-in clinician (mock authentication)">
+      <span class="avatar" id="userAvatar">MA</span>
+      <select id="clinician" aria-label="Signed-in clinician"></select>
+    </label>
+  </header>
+
+  <div class="body">
+    <aside class="sidebar" aria-label="Patients and schedule">
+      <div class="side-section">
+        <div class="side-title">Patients <span id="patientCount"></span></div>
+        <label class="search"><span id="searchIcon"></span><input id="patientSearch" placeholder="Search patients" autocomplete="off"></label>
+      </div>
+      <div class="patient-list" id="patientList"></div>
+      <div class="side-section"><div class="side-title">Booked scans</div></div>
+      <div class="bookings" id="bookingList"></div>
+      <div class="side-foot" id="sideFoot"></div>
+    </aside>
+
+    <main class="main">
+      <div class="convo" id="convo"><div class="convo-inner" id="log"></div></div>
+      <div class="composer-wrap">
+        <div class="composer-inner">
+          <div class="chips" id="chips"></div>
+          <div class="composer" id="composer">
+            <div class="compose-row">
+              <button class="mic" id="mic" title="Talk (hold Space)" aria-label="Start voice input"></button>
+              <div class="input-area">
+                <canvas id="wave"></canvas>
+                <textarea id="text" rows="1" placeholder="Ask, dictate or book… e.g. “Open Priya's latest OPG report”" aria-label="Message"></textarea>
+              </div>
+              <button class="send" id="send" title="Send (Enter)" aria-label="Send"></button>
+            </div>
+            <div class="compose-foot">
+              <span class="foot-label">Mode</span>
+              <div class="seg" id="modeSeg">
+                <button data-mode="assistant" class="on">Assistant</button>
+                <button data-mode="dictation">Dictation</button>
+              </div>
+              <span class="foot-label">Speech</span>
+              <div class="seg" id="sttSeg">
+                <button data-stt="browser" class="on" title="Live transcription in the browser (Chrome/Edge)">Browser · live</button>
+                <button data-stt="server" title="Record and transcribe on the server (Whisper)">Server · Whisper</button>
+              </div>
+              <select class="sample-select" id="sample" title="Bundled voice clips (sent through server speech-to-text)">
+                <option value="">▶ Sample voice clip…</option>
+              </select>
+              <span class="foot-spacer"></span>
+              <span>Hold <span class="kbd">Space</span> to talk · <span class="kbd">Enter</span> to send</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <section class="panel" aria-label="Details">
+      <nav class="tabs" role="tablist">
+        <button class="tab on" data-tab="report" role="tab">Report</button>
+        <button class="tab" data-tab="draft" role="tab">Draft <span class="count" id="draftCount" hidden>1</span></button>
+        <button class="tab" data-tab="schedule" role="tab">Schedule</button>
+        <button class="tab" data-tab="trace" role="tab">Trace</button>
+      </nav>
+      <div class="pane on" id="pane-report"></div>
+      <div class="pane" id="pane-draft"></div>
+      <div class="pane" id="pane-schedule"></div>
+      <div class="pane" id="pane-trace"></div>
+    </section>
+  </div>
+</div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<script type="module" src="/static/js/app.js"></script>
+</body>
+</html>
